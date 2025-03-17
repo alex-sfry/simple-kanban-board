@@ -1,0 +1,111 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+.p-17px {
+  padding: 1.0625rem;
+}
+
+.px-17px {
+  padding-left: 1.0625rem;
+  padding-right: 1.0625rem;
+}
+
+.py-17px {
+  padding-top: 1.0625rem;
+  padding-bottom: 1.0625rem;
+}
+
+.ps-17px {
+  padding-left: 1.0625rem;
+}
+
+.pe-17px {
+  padding-right: 1.0625rem;
+}
+
+.pt-17px {
+  padding-top: 1.0625rem;
+}
+
+.pb-17px {
+  padding-bottom: 1.0625rem;
+}
+
+.m-36px {
+  margin: 2.25rem;
+}
+
+.mx-36px {
+  margin-left: 2.25rem;
+  margin-right: 2.25rem;
+}
+
+.my-36px {
+  margin-top: 2.25rem;
+  margin-bottom: 2.25rem;
+}
+
+.ms-36px {
+  margin-left: 2.25rem;
+}
+
+.me-36px {
+  margin-right: 2.25rem;
+}
+
+.mt-36px {
+  margin-top: 2.25rem;
+}
+
+.mb-36px {
+  margin-bottom: 2.25rem;
+}
+
+.fs-36px {
+  font-size: 2.25rem;
+}
+
+main,
+form,
+input,
+button {
+  font-family: "Roboto", sans-serif;
+}
+
+li {
+  list-style: none !important;
+}
+
+.task:hover {
+  cursor: grab;
+}
+
+.form-control {
+  --bs-body-bg: #f8f9fa;
+  --bs-focus-ring-color: #ced4da;
+}
+
+.form-check-input {
+  --bs-focus-ring-color: #ced4da;
+}
+
+.list-group-item-action {
+  --bs-list-group-bg: $light;
+}
+
+.list-group-item-action:hover {
+  font-weight: 700;
+  --bs-list-group-action-hover-color: #0d6efd;
+  --bs-list-group-action-hover-bg: #e9ecef;
+}
+
+.task .nested-right-dd {
+  bottom: 24% !important;
+  height: fit-content;
+}
+.task .dropdown-menu {
+  --bs-dropdown-min-width: fit-content;
+}

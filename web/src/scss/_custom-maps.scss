@@ -1,0 +1,71 @@
+@use "sass:map";
+
+$paddings: (
+    "17px": 1.0625rem,
+);
+
+$margins: (
+    "36px": 2.25rem,
+);
+
+$fs: (
+    "28px": 1.75rem,
+);
+
+@each $key, $value in $paddings {
+    .p-#{$key} {
+        padding: $value;
+    }
+    .px-#{$key} {
+        padding-left: $value;
+        padding-right: $value;
+    }
+    .py-#{$key} {
+        padding-top: $value;
+        padding-bottom: $value;
+    }
+    .ps-#{$key} {
+        padding-left: $value;
+    }
+    .pe-#{$key} {
+        padding-right: $value;
+    }
+    .pt-#{$key} {
+        padding-top: $value;
+    }
+    .pb-#{$key} {
+        padding-bottom: $value;
+    }
+}
+
+@each $key, $value in $margins {
+    .m-#{$key} {
+        margin: $value;
+    }
+    .mx-#{$key} {
+        margin-left: $value;
+        margin-right: $value;
+    }
+    .my-#{$key} {
+        margin-top: $value;
+        margin-bottom: $value;
+    }
+    .ms-#{$key} {
+        margin-left: $value;
+    }
+    .me-#{$key} {
+        margin-right: $value;
+    }
+    .mt-#{$key} {
+        margin-top: $value;
+    }
+    .mb-#{$key} {
+        margin-bottom: $value;
+    }
+}
+
+@each $key, $value in $margins {
+    .fs-#{$key} {
+        font-size: $value;
+    }
+}
