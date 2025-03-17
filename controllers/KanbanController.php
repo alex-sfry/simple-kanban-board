@@ -91,7 +91,11 @@ class KanbanController extends Controller
         $task = Task::findOne((int)$taskId);
         $task->delete();
         $tasks = Task::findAll(['user_id' => $task->user_id, 'project_id' => $task->project_id]);
-        return $this->renderAjax('_columns', ['tasks' => $tasks]);
+        $currentProject = Project::findOne($task->project_id);
+        return $this->renderAjax(
+            '_columns',
+            ['tasks' => $tasks, 'currentProject' => $currentProject]
+        );
     }
 
     /**
