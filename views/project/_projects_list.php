@@ -5,7 +5,7 @@ use yii\bootstrap5\Html;
 /** @var yii\web\View $this */
 /** @var app\models\ar\Project[] $models */
 ?>
-<div class="input-group">
+<div class="input-group d-none">
     <label for="projectFilter" class="input-group-text bg-light fw-bold rounded-bottom-0">
         Search:
     </label>
