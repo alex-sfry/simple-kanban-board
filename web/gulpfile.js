@@ -97,7 +97,7 @@ export const postCss = () => {
         .pipe(purgecss({
             content: src.content,
             variables: false,
-            safelist: []
+            // safelist: ['tooltip', 'tooltip-arrow', 'bs-tooltip-auto', 'tooltip-inner']
         }))
         .pipe(sourcemaps.init())
         .pipe(postcss(plugins))
