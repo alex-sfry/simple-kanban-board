@@ -4,7 +4,7 @@ return[
     'enablePrettyUrl' => true,
     'showScriptName' => false,
     'enableStrictParsing' => true,
-    'suffix' => '/',
+    // 'suffix' => '/',
     'rules' => [
         'project/create' => 'project/create',
         'projects' => 'project/index',
