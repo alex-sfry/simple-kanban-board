@@ -39,7 +39,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
             'brandUrl' => Yii::$app->homeUrl,
             'brandOptions' => [
                 'style' => '--bs-navbar-brand-color: var(--bs-light);--bs-navbar-brand-hover-color: var(--bs-light);',
-                'class' => 'fs-28px'
+                'class' => 'fs-3'
             ],
             'innerContainerOptions' => ['class' => 'container-xxl'],
             'options' => ['class' => 'navbar-expand-md py-2']
@@ -55,7 +55,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                             . Html::beginForm(['user/logout'])
                             . Html::submitButton(
                                 'Logout (' . Yii::$app->user->identity->username . ')',
-                                ['class' => 'btn btn-outline-gray-1']
+                                ['class' => 'btn btn-outline-light']
                             )
                             . Html::endForm()
                             . '</li>'
@@ -79,12 +79,12 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
         </div>
     </main>
 
-    <footer id="footer" class="py-17px bg-blue-2 text-light">
+    <footer id="footer" class="py-3 bg-blue-2 text-light">
         <div class="container-xxl ">
             <div class="row justify-content-between">
                 <div class="col-3 d-flex">
                     <div id="activeTasks"></div>
-                    <div id="finishedTasks" class="ms-36px"></div>
+                    <div id="finishedTasks" class="ms-5"></div>
                 </div>
                 <div class="col text-end">Kanban board by AlexT, &#169; <?= date("Y") ?></div>
             </div>
