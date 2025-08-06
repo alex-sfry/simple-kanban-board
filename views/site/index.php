@@ -1,7 +1,7 @@
 <?php
 
 /** @var yii\web\View $this */
-/** @var app\models\ar\Project[] $models */
+/** @var app\models\Project[] $models */
 
 $this->title = 'Personal Kanban Board';
 ?>

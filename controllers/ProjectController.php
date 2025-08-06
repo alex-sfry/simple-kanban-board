@@ -2,7 +2,7 @@
 
 namespace app\controllers;
 
-use app\models\ar\Project;
+use app\models\Project;
 use yii\web\Controller;
 use Yii;
 use yii\filters\VerbFilter;

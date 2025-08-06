@@ -1,8 +1,8 @@
 <?php
 
 /** @var yii\web\View $this */
-/** @var app\models\ar\Project $currentProject */
-/** @var app\models\ar\Task[] $tasks */
+/** @var app\models\Project $currentProject */
+/** @var app\models\Task[] $tasks */
 
 $this->title = $currentProject->name;
 ?>

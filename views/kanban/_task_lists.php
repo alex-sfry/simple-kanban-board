@@ -1,7 +1,7 @@
 <?php
 
 /** @var yii\web\View $this */
-/** @var app\models\ar\Task[] $tasks */
+/** @var app\models\Task[] $tasks */
 /** @var array $status */
 /** @var array $statuses */
 ?>

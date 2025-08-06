@@ -3,7 +3,7 @@
 use yii\bootstrap5\Html;
 
 /** @var yii\web\View $this */
-/** @var app\models\ar\Project[] $models */
+/** @var app\models\Project[] $models */
 
 $this->title = 'Select or Create project';
 ?>

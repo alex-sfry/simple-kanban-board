@@ -2,10 +2,10 @@
 
 namespace app\controllers;
 
-use app\models\ar\Project;
+use app\models\Project;
 use yii\web\Controller;
 use yii\web\Response;
-use app\models\ar\Task;
+use app\models\Task;
 use Yii;
 use yii\filters\VerbFilter;
 

@@ -4,7 +4,7 @@ use yii\bootstrap5\ActiveForm;
 use yii\helpers\Html;
 
 /** @var yii\web\View $this */
-/** @var app\models\ar\Project[] $models */
+/** @var app\models\Project[] $models */
 /** @var int $userId */
 
 $this->title = 'Create Project';
