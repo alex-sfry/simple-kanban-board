@@ -14,7 +14,7 @@ class SiteController extends Controller
     /**
      * {@inheritdoc}
      */
-    public function actions()
+    public function actions(): array
     {
         return [
             'error' => [
@@ -32,7 +32,7 @@ class SiteController extends Controller
      *
      * @return Response|string
      */
-    public function actionIndex()
+    public function actionIndex(): Response|string
     {
         if (Yii::$app->user->isGuest) {
             return $this->redirect(['user/login'], 302);
@@ -50,33 +50,5 @@ class SiteController extends Controller
             default:
                 return $this->redirect(['project/index'], 302);
         }
-    }
-
-    /**
-     * Displays contact page.
-     *
-     * @return Response|string
-     */
-    public function actionContact()
-    {
-        $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
-            Yii::$app->session->setFlash('contactFormSubmitted');
-
-            return $this->refresh();
-        }
-        return $this->render('contact', [
-            'model' => $model,
-        ]);
-    }
-
-    /**
-     * Displays about page.
-     *
-     * @return string
-     */
-    public function actionAbout()
-    {
-        return $this->render('about');
     }
 }

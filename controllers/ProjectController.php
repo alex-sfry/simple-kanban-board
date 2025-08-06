@@ -13,7 +13,7 @@ class ProjectController extends Controller
     /**
      * {@inheritdoc}
      */
-    public function behaviors()
+    public function behaviors(): array
     {
         return [
             'verbs' => [
@@ -41,10 +41,9 @@ class ProjectController extends Controller
 
     /**
      * Displays Select or Create project page
-     *
      * @return string
      */
-    public function actionIndex()
+    public function actionIndex(): string
     {
         $query = Project::find()->where(['user_id' => Yii::$app->user->id]);
 
@@ -55,10 +54,9 @@ class ProjectController extends Controller
 
     /**
      * Creates new project
-     *
      * @return Response|string
      */
-    public function actionCreate()
+    public function actionCreate(): Response|string
     {
         $model = new Project();
 

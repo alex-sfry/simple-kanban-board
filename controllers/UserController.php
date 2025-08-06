@@ -20,7 +20,7 @@ class UserController extends Controller
     /**
      * {@inheritdoc}
      */
-    public function behaviors()
+    public function behaviors(): array
     {
         return [
             'access' => [
@@ -45,10 +45,9 @@ class UserController extends Controller
 
     /**
      * Login action.
-     *
-     * @return yii\web\Response|string
+     * @return \yii\web\Response|string
      */
-    public function actionLogin()
+    public function actionLogin(): \yii\web\Response|string
     {
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
@@ -60,29 +59,24 @@ class UserController extends Controller
         }
 
         $model->password = '';
-        return $this->render('login', [
-            'model' => $model,
-        ]);
+        return $this->render('login', ['model' => $model]);
     }
 
     /**
      * Logout action.
-     *
-     * @return yii\web\Response
+     * @return \yii\web\Response
      */
-    public function actionLogout()
+    public function actionLogout(): \yii\web\Response|string
     {
         Yii::$app->user->logout();
-
         return $this->goHome();
     }
 
     /**
      * Signs user up.
-     *
      * @return \yii\web\Response|string
      */
-    public function actionSignup()
+    public function actionSignup(): \yii\web\Response|string
     {
         $model = new SignupForm();
         if ($model->load(Yii::$app->request->post()) && $model->signup()) {
@@ -92,17 +86,14 @@ class UserController extends Controller
             return $this->goHome();
         }
 
-        return $this->render('signup', [
-            'model' => $model,
-        ]);
+        return $this->render('signup', ['model' => $model]);
     }
 
     /**
      * Requests password reset.
-     *
      * @return \yii\web\Response|string
      */
-    public function actionRequestPasswordReset()
+    public function actionRequestPasswordReset(): \yii\web\Response|string
     {
         $model = new PasswordResetRequestForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
@@ -117,19 +108,16 @@ class UserController extends Controller
                 ->setFlash('error', 'Sorry, we are unable to reset password for the provided email address.');
         }
 
-        return $this->render('requestPasswordResetToken', [
-            'model' => $model,
-        ]);
+        return $this->render('requestPasswordResetToken', ['model' => $model]);
     }
 
     /**
      * Resets password.
-     *
      * @param string $token
      * @return \yii\web\Response|string
      * @throws BadRequestHttpException
      */
-    public function actionResetPassword($token)
+    public function actionResetPassword(string $token): \yii\web\Response|string
     {
         try {
             $model = new ResetPasswordForm($token);
@@ -147,19 +135,16 @@ class UserController extends Controller
             return $this->goHome();
         }
 
-        return $this->render('resetPassword', [
-            'model' => $model,
-        ]);
+        return $this->render('resetPassword', ['model' => $model]);
     }
 
     /**
      * Verify email address
-     *
      * @param string $token
-     * @throws BadRequestHttpException
      * @return \yii\web\Response
+     * @throws BadRequestHttpException
      */
-    public function actionVerifyEmail($token)
+    public function actionVerifyEmail(string $token): \yii\web\Response
     {
         try {
             $model = new VerifyEmailForm($token);
@@ -177,10 +162,9 @@ class UserController extends Controller
 
     /**
      * Resend verification email
-     *
      * @return \yii\web\Response|string
      */
-    public function actionResendVerificationEmail()
+    public function actionResendVerificationEmail(): \yii\web\Response|string
     {
         $model = new ResendVerificationEmailForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
@@ -198,8 +182,6 @@ class UserController extends Controller
                 );
         }
 
-        return $this->render('resendVerificationEmail', [
-            'model' => $model
-        ]);
+        return $this->render('resendVerificationEmail', ['model' => $model]);
     }
 }

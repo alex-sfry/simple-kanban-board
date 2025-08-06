@@ -14,7 +14,7 @@ class KanbanController extends Controller
     /**
      * {@inheritdoc}
      */
-    public function behaviors()
+    public function behaviors(): array
     {
         return [
             'verbs' => [
@@ -43,11 +43,10 @@ class KanbanController extends Controller
 
     /**
      * Displays kanban board for selected project.
-     *
      * @param int $project_id
      * @return Response|string
      */
-    public function actionProject($projectId)
+    public function actionProject(int $projectId): Response|string
     {
         $userId = Yii::$app->user->id;
         $tasks = Task::find()->where(['user_id' => $userId, 'project_id' => $projectId])->all();
@@ -63,11 +62,10 @@ class KanbanController extends Controller
 
     /**
      * Creates task.
-     *
      * @param int $project_id
      * @return Response|string
      */
-    public function actionCreate($projectId)
+    public function actionCreate(int $projectId): Response|string
     {
         $model = new Task();
         $model->user_id = Yii::$app->user->id;
@@ -82,28 +80,24 @@ class KanbanController extends Controller
 
     /**
      * Deletes task.
-     * 
      * @return string
      */
-    public function actionDelete()
+    public function actionDelete(): string
     {
         $taskId = Yii::$app->request->post('taskId');
         $task = Task::findOne((int)$taskId);
         $task->delete();
         $tasks = Task::findAll(['user_id' => $task->user_id, 'project_id' => $task->project_id]);
         $currentProject = Project::findOne($task->project_id);
-        return $this->renderAjax(
-            '_columns',
-            ['tasks' => $tasks, 'currentProject' => $currentProject]
-        );
+
+        return $this->renderAjax('_columns', ['tasks' => $tasks, 'currentProject' => $currentProject]);
     }
 
     /**
      * Updates task's status.
-     *
      * @return string
      */
-    public function actionUpdateStatus()
+    public function actionUpdateStatus(): string
     {
         $post = Yii::$app->request->post();
         $task = Task::findOne((int)$post['taskId']);
@@ -112,9 +106,7 @@ class KanbanController extends Controller
         $tasks = Task::findAll(['user_id' => $task->user_id, 'project_id' => $task->project_id]);
         $currentProject = Project::findOne($task->project_id);
         Yii::$app->response->format = yii\web\Response::FORMAT_HTML;
-        return $this->renderAjax(
-            '_columns',
-            ['tasks' => $tasks, 'currentProject' => $currentProject]
-        );
+
+        return $this->renderAjax('_columns', ['tasks' => $tasks, 'currentProject' => $currentProject]);
     }
 }
