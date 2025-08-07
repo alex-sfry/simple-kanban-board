@@ -14,7 +14,7 @@ function initBoard() {
 
     $('.task-menu').on('click', '.btn-del-task', function () {
         const taskId = $(this).closest('.task').data('id');
-        $.post('/task/delete/', { taskId: taskId }, function (response) {
+        $.post('/task/delete', { taskId: taskId }, function (response) {
             $('#kanban-board').html(response);
             initBoard();
         });
@@ -23,7 +23,7 @@ function initBoard() {
     $('.task-menu').on('click', '.btn-move', function () {
         const taskId = $(this).closest('.task').data('id');
         const newStatus = $(this).data('dest');
-        $.post('/task/update-status/', { taskId: taskId, status: newStatus }, function (response) {
+        $.post('/task/update-status', { taskId: taskId, status: newStatus }, function (response) {
             $('#kanban-board').html(response);
             initBoard();
         });
@@ -42,7 +42,7 @@ function initBoard() {
         const taskId = event.originalEvent.dataTransfer.getData('task-id');
         const newStatus = $(this).data('status');
 
-        $.post('/task/update-status/', { taskId: taskId, status: newStatus }, function (response) {
+        $.post('/task/update-status', { taskId: taskId, status: newStatus }, function (response) {
             $('#kanban-board').html(response);
             initBoard();
         });
