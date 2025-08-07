@@ -10,7 +10,7 @@
         <div data-id="<?= $task->id ?>"
             class='task d-flex justify-content-between bg-light rounded-1 border shadow-sm p-2 mb-2'
             draggable='true'>
-            <span class="text-wrap text-break overflow-x-hidden pe-3">asdsadsadsadsadsadsadsadsadas<?= e($task->title) ?></span>
+            <span class="text-wrap text-break overflow-x-hidden pe-3"><?= e($task->title) ?></span>
             <div class="align-self-center">
                 <span class="dropdown">
                     <button class="btn btn-sm btn-outline-secondary lh-1"
@@ -30,7 +30,7 @@
                                 Move to...
                             </button>
                             <ul class="nested-right-dd dropdown-menu">
-                                <?php foreach ($statuses as $key => $value): ?>
+                                <?php foreach ($statuses as $key => $value) : ?>
                                     <li>
                                         <button class="btn-move dropdown-item"
                                             type="button"

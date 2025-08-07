@@ -25,7 +25,7 @@ $statuses = [
                 ) ?>
             </div>
         </div>
-        <?php if ($key === 'todo'): ?>
+        <?php if ($key === 'todo') : ?>
             <?= Html::a(
                 'Create Task',
                 ['kanban/create', 'projectId' => $currentProject->id],
