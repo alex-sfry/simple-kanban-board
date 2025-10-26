@@ -25,7 +25,7 @@ return [
         'yii\bootstrap5\BootstrapPluginAsset' => [
             'basePath' => '@webroot',
             'baseUrl' => '@web',
-            'js' => ['src/vendorJs/bootstrap.bundle.min.js',],
+            'js' => ['src/vendorJS/bootstrap.bundle.min.js',],
             'jsOptions' => ['position' => View::POS_END]
         ],
     ],
